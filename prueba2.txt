@@ -1,0 +1,6 @@
+|x , y|
+proc moverYPoner [
+    move: 2 .
+    put: 1 ofType: #chip .
+]
+if: canMove: 1 inDir #north then: [ move: 1 inDir: #north . ] else: [ nop . ]  

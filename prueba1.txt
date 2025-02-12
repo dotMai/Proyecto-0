@@ -1,0 +1,10 @@
+|x , y|
+proc moVerYPoner [
+    move: 2 .
+    put: 1 ofType: #chips .
+]
+
+
+if: canMove: 1 inDir: #north then: [ move: 1 inDir: #north . ] ELSE: [ nop . ]
+if: canMove: 1 InDir: #east then: [ move: 1 inDir: #east . ] else: [ nop . ]
+if: canMove: 1 inDir: #SOUTH then: [ move: 1 inDir: #south . ] else: [ nop . ]
