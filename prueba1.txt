@@ -1,10 +1,19 @@
-|x , y|
-proc moVerYPoner [
-    move: 2 .
+|a, b, c|
+proc recogerYDejar [
+    move: 3 .
+    pick: 2 ofType: #balloons .
+    turn: #left .
+    move: 1 .
     put: 1 ofType: #chips .
 ]
 
+if: canMove: 1 inDir: #north then: [ move: 1 inDir: #north . ] else: [ nop . ]
+if: canMove: 1 inDir: #east then: [ move: 1 inDir: #east . ] else: [ nop . ]
+if: canMove: 1 inDir: #south then: [ move: 1 inDir: #south . ] else: [ nop . ]
 
-if: canMove: 1 inDir: #north then: [ move: 1 inDir: #north . ] ELSE: [ nop . ]
-if: canMove: 1 InDir: #east then: [ move: 1 inDir: #east . ] else: [ nop . ]
-if: canMove: 1 inDir: #SOUTH then: [ move: 1 inDir: #south . ] else: [ nop . ]
+proc irAlCentro [
+    face: #west .
+    while: canMove: 1 inDir: #west do: [ move: 1 inDir: #west . ]
+    turn: #around .
+    move: 2 .
+]

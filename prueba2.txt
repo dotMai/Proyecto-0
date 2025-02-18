@@ -1,6 +1,19 @@
-|x , y|
-proc moverYPoner [
-    move: 2 .
-    put: 1 ofType: #chip .
+|a, b, c|
+proc RecogerYDejar [
+    Move: 3 .  
+    pick: 2 OfType: #balloons .  
+    Turn: #LEFT .  
+    move: 1 .
+    Put: 1 oftype: #CHIPS .  
 ]
-if: canMove: 1 inDir #north then: [ move: 1 inDir: #north . ] else: [ nop . ]  
+
+IF: canMove: 1 inDir: #north THEN: [ move: 1 inDir: #north . ] ELSE: [ nop . ]  
+if: canMove: 1 InDir: #east then: [ move: 1 inDir: #east . ] else: [ nop . ]  
+if: canMove: 1 inDir: #South then: [ move: 1 inDir: #south . ] else: [ nop . ]  
+
+proc IRalCentro [
+    Face: #WEST . 
+    while: canMove: 1 INDIR: #west do: [ move: 1 inDir: #west . ] 
+    turn: #around .
+    Move: 2 . 
+]
